@@ -1,14 +1,11 @@
 class Janken
-  def initialize
-    @human_hand = gets.chomp
-  end
-
   def check_human_hand
     loop do
-    return @human_hand if ['ぐー', 'ちょき', 'ぱー'].include?(@human_hand)
-    puts '入力が正しくありません。ぐー：ちょき：ぱー のいずれかを入力してください'
-    print '>'
-    @human_hand = gets.chomp
+      @human_hand = gets.chomp
+      return @human_hand if %w[ぐー ちょき ぱー].include?(@human_hand)
+
+      puts '入力が正しくありません。ぐー：ちょき：ぱー のいずれかを入力してください'
+      print '>'
     end
   end
 
