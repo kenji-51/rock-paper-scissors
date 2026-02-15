@@ -25,9 +25,7 @@ class Janken
           (@human_hand == 'ちょき' && @computer_hand == 'ぱー') ||
           (@human_hand == 'ぱー' && @computer_hand == 'ぐー')
       puts 'やったね人間の勝ち!!'
-    elsif (@human_hand == 'ちょき' && @computer_hand == 'ぐー') ||
-          (@human_hand == 'ぱー' && @computer_hand == 'ちょき') ||
-          (@human_hand == 'ぐー' && @computer_hand == 'ぱー')
+    else
       puts '残念... コンピューターの勝ち'
     end
   end
