@@ -13,7 +13,7 @@ class Janken
   end
 
   def rock_paper_scissors
-    @computer_hand = ['ぐー', 'ちょき', 'ぱー'].sample
+    @computer_hand = %w[ぐー ちょき ぱー].sample
     puts "あなたは、#{@human_hand} を出しました"
     puts "コンピューターは、#{@computer_hand} を出しました"
   end
