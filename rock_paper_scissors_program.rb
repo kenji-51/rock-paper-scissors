@@ -20,13 +20,17 @@ class Janken
   end
 
   def judge
-    if @human_hand == @computer_hand
+    hand = { 'ぐー' => 0, 'ちょき' => 1, 'ぱー' => 2 }
+    human_hand = hand[@human_hand]
+    computer_hand = hand[@computer_hand]
+    result = (human_hand - computer_hand + 3) % 3
+
+    case result
+    when 0
       puts 'あいこです。もう一回'
-    elsif (@human_hand == 'ぐー' && @computer_hand == 'ちょき') ||
-          (@human_hand == 'ちょき' && @computer_hand == 'ぱー') ||
-          (@human_hand == 'ぱー' && @computer_hand == 'ぐー')
+    when 1
       puts 'やったね人間の勝ち!!'
-    else
+    when 2
       puts '残念... コンピューターの勝ち'
     end
   end
