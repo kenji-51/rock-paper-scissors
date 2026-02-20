@@ -1,13 +1,17 @@
 class Janken
-  def check_human_hand
+  def play_janken
     loop do
       @human_hand = gets.chomp
-      return @human_hand if %w[ぐー ちょき ぱー].include?(@human_hand)
+      break if %w[ぐー ちょき ぱー].include?(@human_hand)
 
       puts '入力が正しくありません。ぐー：ちょき：ぱー のいずれかを入力してください'
       print '>'
     end
+    rock_paper_scissors
+    judge
   end
+
+  private
 
   def rock_paper_scissors
     @computer_hand = %w[ぐー ちょき ぱー].sample
@@ -32,6 +36,4 @@ puts '最初は ぐー、じゃんけん〜〜'
 puts '（ぐー、ちょき、ぱー）のどれかを入力してください'
 print '>'
 janken = Janken.new
-janken.check_human_hand
-janken.rock_paper_scissors
-janken.judge
+janken.play_janken
