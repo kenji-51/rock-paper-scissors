@@ -7,13 +7,13 @@ class Janken
       puts '入力が正しくありません。ぐー：ちょき：ぱー のいずれかを入力してください'
       print '>'
     end
-    rock_paper_scissors
+    check_computer_hand
     judge
   end
 
   private
 
-  def rock_paper_scissors
+  def check_computer_hand
     @computer_hand = %w[ぐー ちょき ぱー].sample
     puts "あなたは、#{@human_hand} を出しました"
     puts "コンピューターは、#{@computer_hand} を出しました"
