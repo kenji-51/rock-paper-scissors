@@ -1,5 +1,5 @@
 class Janken
-  def play_janken
+  def play
     loop do
       @human_hand = gets.chomp
       break if %w[ぐー ちょき ぱー].include?(@human_hand)
@@ -40,4 +40,4 @@ puts '最初は ぐー、じゃんけん〜〜'
 puts '（ぐー、ちょき、ぱー）のどれかを入力してください'
 print '>'
 janken = Janken.new
-janken.play_janken
+janken.play
