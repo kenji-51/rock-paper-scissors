@@ -1,5 +1,8 @@
+require 'debug'
+
 class Janken
   HANDS = %w[ぐー ちょき ぱー].freeze
+  HANDS_HASH = HANDS.each_with_index.to_h.freeze
 
   def play
     loop do
@@ -22,9 +25,8 @@ class Janken
   end
 
   def judge
-    hand = { 'ぐー' => 0, 'ちょき' => 1, 'ぱー' => 2 }
-    human_hand = hand[@human_hand]
-    computer_hand = hand[@computer_hand]
+    human_hand = HANDS_HASH[@human_hand]
+    computer_hand = HANDS_HASH[@computer_hand]
     result = (human_hand - computer_hand + 3) % 3
 
     case result
