@@ -1,5 +1,3 @@
-require 'debug'
-
 class Janken
   HANDS = %w[ぐー ちょき ぱー].freeze
   HANDS_HASH = HANDS.each_with_index.to_h.freeze
