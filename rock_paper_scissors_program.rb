@@ -1,8 +1,10 @@
 class Janken
+  HANDS = %w[ぐー ちょき ぱー].freeze
+
   def play
     loop do
       @human_hand = gets.chomp
-      break if hands.include?(@human_hand)
+      break if HANDS.include?(@human_hand)
 
       puts '入力が正しくありません。ぐー：ちょき：ぱー のいずれかを入力してください'
       print '>'
@@ -13,12 +15,8 @@ class Janken
 
   private
 
-  def hands
-    %w[ぐー ちょき ぱー]
-  end
-
   def check_human_computer_hands
-    @computer_hand = hands.sample
+    @computer_hand = HANDS.sample
     puts "あなたは、#{@human_hand} を出しました"
     puts "コンピューターは、#{@computer_hand} を出しました"
   end
